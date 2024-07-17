@@ -1,7 +1,11 @@
 from flask import Flask, request, jsonify
-from pytrends.request import TrendReq
 
 app = Flask(__name__)
+
+# Ruta para la URL raíz
+@app.route('/')
+def index():
+    return "Bienvenido a la aplicación de tendencias de Google!"
 
 @app.route('/google-trends', methods=['POST'])
 def google_trends():
